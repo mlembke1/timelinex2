@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "timelinex-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/timelinex/TimelinexWebPart.js",
+          "manifest": "./src/webparts/timelinex/TimelinexWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TimelinexWebPartStrings": "lib/webparts/timelinex/loc/{locale}.js"
+  }
+}

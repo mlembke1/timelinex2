@@ -1,0 +1,19 @@
+{
+  "@pnp/generator-spfx": {
+    "framework": "none",
+    "pnpFramework": "angularelements",
+    "pnp-libraries": [
+      "rush@3.3"
+    ],
+    "pnp-ci": "azure",
+    "pnp-vetting": [],
+    "spfxenv": "spo"
+  },
+  "@microsoft/generator-sharepoint": {
+    "solutionName": "timelinex-spfx",
+    "environment": "spo",
+    "framework": "none",
+    "isCreatingSolution": true,
+    "whichFolder": "subdir"
+  }
+}

@@ -1,0 +1,11 @@
+<header class="header">
+  <h1>TimelineX.</h1>
+  <h3>Grab the URL of your calendar and paste it below to get started.</h3>
+</header>
+
+<main>
+  <section class="input-section">
+    <input (keyup.enter)="addCalendar()" class="margin-1em" nz-input placeholder="Enter Calendar URL" [(ngModel)]="calendarURLInput" />
+    <button (click)="addCalendar()" class="margin-1em" nz-button nzType="default" nzShape="circle"> + </button>
+  </section>
+</main>

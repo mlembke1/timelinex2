@@ -1,0 +1,14 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.11.0",
+    "libraryName": "timelinex-spfx",
+    "libraryId": "eaa1ea50-79bb-438e-97da-d418fa83a75e",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "timelinex-spfx",
+    "framework": "none",
+    "isCreatingSolution": true,
+    "isDomainIsolated": true,
+    "componentType": "webpart"
+  }
+}

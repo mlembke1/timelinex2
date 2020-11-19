@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 5px solid lightgrey;
+    min-height: 20em;
+    background-size: cover;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+
+    * {
+        color: darkslategray;
+    }
+
+}
+
+.input-section {
+    display: flex;
+    width: 30em;
+    margin: auto;
+}
+
+.margin-1em {
+    margin: 1em;
+}
