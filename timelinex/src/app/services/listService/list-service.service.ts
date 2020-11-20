@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { MockListService } from '../mockListService/mock-list-service.service';
 import { Observable, of } from 'rxjs';
 
@@ -27,13 +27,23 @@ export class ListService {
     }
   }
 
+  private sanitizeCalendarUrl(url) {
+    let index = url.indexOf('/Lists/');
+    let index2 = url.indexOf('/default.aspx');
+    let index3 = url.indexOf('/SitePages/');
+    if (index != -1) url = url.substring(0, index);
+    if (index2 != -1) url = url.substring(0, index2);
+    if (index3 != -1) url = url.substring(0, index3);
+    return url;
+  }
+
   public getListsFromSP(siteURL: string): any {
     //Query SP via REST to get the lists available to the end user.
     //BaseTemplate 106 = Calendar.  Sort by the title for convenience
     //All list template IDs: https://docs.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-wssts/8bf797af-288c-4a1d-a14b-cf5394e636cf
     //spHttpClient does a brand new call to SP, which is CORS compliant.  Similar to a CDN call - this also bakes in our authentication headers and tokens from the webpart context.
-    const url = siteURL + "/_api/web/lists?$filter=BaseTemplate eq 106&$select=Id,Title,ParentWebUrl&$orderby=Title asc";
-    this.httpClient.get(url).subscribe((response) => {
+    const url = this.sanitizeCalendarUrl(siteURL) + "/_api/web/lists?$filter=BaseTemplate eq 106";
+    this.httpClient.get("https://mlembke1.sharepoint.com/sites/appdev1/_api/web/lists/getByTitle('Cal1')/items?$top=2000").subscribe((response) => {
       console.log('getListsFromSP Response', response);
     });
       //   let returnSPLists: any[] = [];

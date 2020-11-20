@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { TimelinexWebPartComponent } from './components/timelinex-web-part/timelinex-web-part.component';
 import { FormsModule } from '@angular/forms';
+import { ListService } from './services/listService/list-service.service';
+import { PnPBaseService } from './services/pnpBaseService/pnp-base-service.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { FormsModule } from '@angular/forms';
     NzIconModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    ListService,
+    PnPBaseService
+  ],
   entryComponents: [TimelinexWebPartComponent]
 })
 export class AppModule {

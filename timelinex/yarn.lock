@@ -1434,6 +1434,49 @@
   dependencies:
     mkdirp "^1.0.4"
 
+"@pnp/common@2.0.12", "@pnp/common@^2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@pnp/common/-/common-2.0.12.tgz#3689f4b9513184b030248096c293fef9ff494f31"
+  integrity sha512-fflj9+VYXRXFVGsCpWGxEVFHtyVjXqH450o5zOkMAx5nx/5k/41oYwG6F1o+gSryFpyxUENHrKTEJlZrAtIiig==
+  dependencies:
+    tslib "2.0.0"
+
+"@pnp/logging@2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@pnp/logging/-/logging-2.0.12.tgz#0307186abeb7b07772085b3820c486d28f1657a7"
+  integrity sha512-fnGPXPCj5csI4wdVh+JCRwxVQVarc3K2rZoH0B6LG6UUzzPahrYPSK3il785VmsTqiEB7fBqwlToUJTTVMaKjA==
+  dependencies:
+    tslib "2.0.0"
+
+"@pnp/odata@2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@pnp/odata/-/odata-2.0.12.tgz#0c5baaed9fba8c429e6e2b04e1133a0e4624d362"
+  integrity sha512-r3wlJVrs4Rnq4kQG2rtW1S2X+CYG7n8P17OZWItiF3fY/L84LEItrSWrK5xa/7fVRn6KhGQDJD46I2eK714img==
+  dependencies:
+    "@pnp/common" "2.0.12"
+    "@pnp/logging" "2.0.12"
+    tslib "2.0.0"
+
+"@pnp/sp-addinhelpers@^2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@pnp/sp-addinhelpers/-/sp-addinhelpers-2.0.12.tgz#89406057c0f2350342b49110850220ad45aa0ced"
+  integrity sha512-TKSmHXPL6s6u71z1ewPuwm+QRfsAEPEQ+I5tCyBVWZgYEk1MUGovCtovtpdtiH9ZbTP7mjsOnAHNNi7/u4wVsw==
+  dependencies:
+    "@pnp/common" "2.0.12"
+    "@pnp/sp" "2.0.12"
+    "@types/sharepoint" "2016.1.2"
+    tslib "2.0.0"
+
+"@pnp/sp@2.0.12", "@pnp/sp@^2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@pnp/sp/-/sp-2.0.12.tgz#7ccb85fee43c1948732c32ebee1cda7ca1e7e3df"
+  integrity sha512-Mk1WzQTSC+qh9Y3aYvXYZtLBqRDOdgElq4FKbP7y6jHr9Wit6PRLPW3NSkKKzESzr/g4jn24rkX9ubnNFz4Upg==
+  dependencies:
+    "@pnp/common" "2.0.12"
+    "@pnp/logging" "2.0.12"
+    "@pnp/odata" "2.0.12"
+    tslib "2.0.0"
+
 "@schematics/angular@11.0.2":
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-11.0.2.tgz#63041d1931fe2d56135d730a6e43937a3eef4bab"
@@ -1489,6 +1532,11 @@
   version "4.14.117"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.117.tgz#695a7f514182771a1e0f4345d189052ee33c8778"
   integrity sha512-xyf2m6tRbz8qQKcxYZa7PA4SllYcay+eh25DN3jmNYY6gSTL7Htc/bttVdkqj2wfJGbeWlQiX8pIyJpKU+tubw==
+
+"@types/microsoft-ajax@*":
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/@types/microsoft-ajax/-/microsoft-ajax-0.0.35.tgz#2664639bf1754c8376da1a9b25e3d5efff62b45e"
+  integrity sha512-uM+VKi5q/EjhsCSfH/raPPB5qxuSuOIgmn03LEpDrvDKgsFxvTFeeaRIgib2imNAm7GOQ4MhgsNWiIRGK/YxcQ==
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -1562,6 +1610,13 @@
   version "3.0.17"
   resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.17.tgz#50bea0c3c2acc31c959c5b1e747798b3b3d06d4b"
   integrity sha512-tGomyEuzSC1H28y2zlW6XPCaDaXFaD6soTdb4GNdmte2qfHtrKqhy0ZFs4r/1hpazCfEZqeTSRLvSasmEx89uw==
+
+"@types/sharepoint@2016.1.2":
+  version "2016.1.2"
+  resolved "https://registry.yarnpkg.com/@types/sharepoint/-/sharepoint-2016.1.2.tgz#381605370cbf87d3951f622c03e0fd8765711f78"
+  integrity sha512-bGpRxTZ5Cu7f4iYtmqADY2Z8i3OmPlct0wzx/EMPJ2E0m8xfA+XkFiXrjbC3hZQQn7N1aA7a7llnJl+zOc9qwQ==
+  dependencies:
+    "@types/microsoft-ajax" "*"
 
 "@types/source-list-map@*":
   version "0.1.2"
@@ -8905,6 +8960,11 @@ ts-pnp@^1.1.6:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
+
+tslib@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
+  integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 
 tslib@2.0.3, tslib@^2.0.0, tslib@^2.0.3:
   version "2.0.3"
