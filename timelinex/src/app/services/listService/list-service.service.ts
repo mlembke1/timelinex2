@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MockListService } from '../mockListService/mock-list-service.service';
 import { Observable, of } from 'rxjs';
+import { PnPBaseService } from '../pnpBaseService/pnp-base-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +11,21 @@ import { Observable, of } from 'rxjs';
 export class ListService {
   constructor(
     private mockListService: MockListService,
+    private pnpService: PnPBaseService,
     private httpClient: HttpClient
     ) { }
   
-  public getLists(siteURL?: string): Observable<any> {
+  public getLists(siteURL?: string): Promise<any> {
     if (!siteURL) {
         // resolve to empty since no url was supplied
-        return of(null);
+        return new Promise(null);
     }
 
     //Using local workbench - fake it 
     if (window.location.href.indexOf('localhost') !== -1) {
-        return this.mockListService.getLists(siteURL);
+        return this.mockListService.getListItemsFromMockup(siteURL);
     } else {
-        return this.getListsFromSP(siteURL);
+        return this.pnpService.getDataByListName(siteURL);
     }
   }
 
@@ -43,9 +45,10 @@ export class ListService {
     //All list template IDs: https://docs.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-wssts/8bf797af-288c-4a1d-a14b-cf5394e636cf
     //spHttpClient does a brand new call to SP, which is CORS compliant.  Similar to a CDN call - this also bakes in our authentication headers and tokens from the webpart context.
     const url = this.sanitizeCalendarUrl(siteURL) + "/_api/web/lists?$filter=BaseTemplate eq 106";
-    this.httpClient.get("https://mlembke1.sharepoint.com/sites/appdev1/_api/web/lists/getByTitle('Cal1')/items?$top=2000").subscribe((response) => {
-      console.log('getListsFromSP Response', response);
-    });
+    const requestOptions = {
+      headers: new HttpHeaders().set('credentials', 'include')
+    };
+    return this.httpClient.get(url, requestOptions)
       //   let returnSPLists: any[] = [];
       //   result.value.forEach(element => {
       //   returnSPLists.push({

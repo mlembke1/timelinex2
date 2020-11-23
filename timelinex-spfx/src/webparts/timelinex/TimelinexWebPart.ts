@@ -20,6 +20,14 @@ export interface ITimelinexWebPartProps {
 export default class TimelinexWebPart extends BaseClientSideWebPart<ITimelinexWebPartProps> {
 
   public render(): void {
+    Array['from'](document.getElementsByTagName('iframe')).forEach(function(el: any){
+      console.log('INSIDE OF FOR LOOP...', el);
+      if (el.id.indexOf('dom-isolated-webpart') !== -1) {
+        console.log('SHOULD BE SETTING IFRAME HEIGHT.........')
+        el['style']="height: 30em;";
+      }
+    });
+    window['webPartContext'] = this.context;
     this.domElement.innerHTML = `<app-timelinex-web-part></app-timelinex-web-part>`;
   }
 

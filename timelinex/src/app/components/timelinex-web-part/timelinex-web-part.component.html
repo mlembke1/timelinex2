@@ -8,4 +8,17 @@
     <input (keyup.enter)="addCalendar()" class="margin-1em" nz-input placeholder="Enter Calendar URL" [(ngModel)]="calendarURLInput" />
     <button (click)="addCalendar()" class="margin-1em" nz-button nzType="default" nzShape="circle"> + </button>
   </section>
+
+  
+  <section class="cards-section" *ngIf="events && events.length">
+    <hr>
+    <div style="min-width: 80%; margin: 1em;" *ngFor="let event of events">
+      <nz-card nzTitle="{{event.title}}">
+        <p>Start: {{event.start}}</p>
+        <p>End: {{event.end}}</p>
+        <p>Recurring Event: {{event.recurring}}</p>
+        <p>All Day Event: {{event.allDayEvent}}</p>
+      </nz-card>
+    </div>
+  </section>
 </main>
