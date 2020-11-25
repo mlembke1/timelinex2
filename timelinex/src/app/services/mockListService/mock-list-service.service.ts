@@ -30,7 +30,7 @@ export class MockListService {
         }]);
   }
 
-  public getListItemsFromMockup(list: any): Promise<any> {
+  public getListItemsFromMockup(url: any): Promise<any> {
     return new Promise((resolve, reject) => {
       resolve([
         {

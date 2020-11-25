@@ -1,6 +1,8 @@
 <header class="header">
-  <h1>TimelineX.</h1>
-  <h3>Grab the URL of your calendar and paste it below to get started.</h3>
+  <div class="header-text">
+    <h1>TimelineX.</h1>
+    <h3>Grab the URL of your calendar and paste it below to get started.</h3>
+  </div>
 </header>
 
 <main>
@@ -13,11 +15,11 @@
   <section class="cards-section" *ngIf="events && events.length">
     <hr>
     <div style="min-width: 80%; margin: 1em;" *ngFor="let event of events">
-      <nz-card nzTitle="{{event.title}}">
-        <p>Start: {{event.start}}</p>
-        <p>End: {{event.end}}</p>
-        <p>Recurring Event: {{event.recurring}}</p>
-        <p>All Day Event: {{event.allDayEvent}}</p>
+      <nz-card nzTitle="{{event.Title}}">
+        <p>Start: {{event.EventDate}}</p>
+        <p>End: {{event.EndDate}}</p>
+        <p>Recurring Event: {{event.fRecurrence}}</p>
+        <p>All Day Event: {{event.fAllDayEvent}}</p>
       </nz-card>
     </div>
   </section>
